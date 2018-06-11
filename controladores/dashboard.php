@@ -9,12 +9,12 @@ class Dashboard extends Controlador
 	function __construct()
 	{
 		parent::__construct();
-		
+
 		Session::iniciar();
 		$logueado = Session::obtener('logueado');
-		if($logueado==false){
+		if($logueado == false){
 			Session::terminar();
-			header('location: login.php');
+			header('location: '.URL_Base.'login');
 			exit;
 		}
 
@@ -24,5 +24,10 @@ class Dashboard extends Controlador
 		$this->vista->render('dashboard/index');	
 	}
 
+	function logOut() {
+			Session::terminar();
+			header('location: '.URL_Base.'login');
+			exit;
+	}
 
 }

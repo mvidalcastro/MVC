@@ -18,12 +18,13 @@ class Session
 
 	public static function obtener($clave)
 	{
-		return $_SESSION[$clave];
+		if( isset($_SESSION[$clave]))	
+			return $_SESSION[$clave];
 	}
 
 	public static function terminar()
 	{
-		//unset($_SESSION);
+		unset($_SESSION);
 		session_destroy();	
 	}
 

@@ -1,0 +1,24 @@
+1- Crear carpeta del proyecto  (ejemplo MVC).
+	- Si es otra carpeta aseguresede cambiar la variable URL_Base en el archivo /config/path.php
+
+2- ingreasar a base de datos mysql y ejecutar db_install.sql·
+
+3- Cambiar archivo ._htaccess por .htaccess (sin guion bajo).
+
+4- Verificar que en el archivo apache2.conf se necuntre habiltada la opcion AllowOverride Al, tal como 	  sigue:
+
+	<Directory /var/www/>
+	        Options Indexes FollowSymLinks
+	        AllowOverride All
+	        Require all granted
+	</Directory>
+
+5- Verificar en el archivo apache2.conf la etiqueta AccessFileName sea .htaccess, tal como sigue:
+	AccessFileName .htaccess
+
+6.- Vericar en el archivo php.ini (/etc/php/X.X/apache2) se encunetre habilitadao el driver php_pdo_mysql.so (ubuntu) o  php_pdo_mysql.dll (windows)
+
+
+sudo apt-get install php7.0-mysql
+sudo phpenmod pdo_mysql
+sudo service apache2 restart 

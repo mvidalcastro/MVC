@@ -32,6 +32,7 @@ class Login_Modelo extends Modelo
 			header('location: '.URL_Base.'dashboard');
 		}
 		else{ //No se pudo loguear
+			Session::terminar();
 			header('location: '.URL_Base.'login');	
 		}	
 	}

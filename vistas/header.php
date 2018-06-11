@@ -8,12 +8,24 @@
 	
 </head>
 <body>
+	<?php /*Session::iniciar(); */?>
 <div id="header">
 	HEADER
 	<br />
 	<a href="<?php echo URL_Base; ?>index"> Inicio </a>
 	<a href="<?php echo URL_Base; ?>ayuda"> Ayuda </a>
-	<a href="<?php echo URL_Base; ?>login"> Login </a>
+	<?php  
+	if (Session::obtener('logueado') == true) // esta logueado
+	{
+		echo '<a href="'.URL_Base.'dashboard/logOut"> LogOut </a>';	
+	}
+	else // No esta logueado
+	{
+		echo '<a href="'.URL_Base.'login"> Login </a>';	
+	}	
+
+	?>
+	
 </div>
 
 <div id="content">

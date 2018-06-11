@@ -9,6 +9,7 @@ class Index extends Controlador
 	{
 		parent::__construct();
 		//echo 'Estoy en el controlador Index';
+		//echo MD5('desa');
 	}
 
 	function index()
